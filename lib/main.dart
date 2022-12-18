@@ -20,6 +20,16 @@ class ChakCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/thumb-1.jpg'),
+                radius: 50,
+              ),
+            ),
+            Divider(
+              height: 90,
+              color: Colors.grey[400],
+            ),
             Text(
               'NAME',
               style: TextStyle(
@@ -62,8 +72,9 @@ class ChakCard extends StatelessWidget {
                   Icons.email,
                   color: Colors.blueAccent,
                 ),
+                SizedBox(width: 10),
                 Text(
-                  'chak46372809@gmail.com',
+                  'monika46372809@gmail.com',
                   style: TextStyle(
                     color: Colors.grey,
                   ),
@@ -73,6 +84,7 @@ class ChakCard extends StatelessWidget {
           ],
         ),
       ),
+
     );
   }
 }
