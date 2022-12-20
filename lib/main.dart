@@ -4,7 +4,12 @@ void main() => runApp(MaterialApp(
       home: ChakCard(),
     ));
 
-class ChakCard extends StatelessWidget {
+class ChakCard extends StatefulWidget {
+  @override
+  State<ChakCard> createState() => _ChakCardState();
+}
+
+class _ChakCardState extends State<ChakCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +21,7 @@ class ChakCard extends StatelessWidget {
         elevation: 0,
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(30, 30, 0, 0),
+        padding: EdgeInsets.fromLTRB(10, 30, 0, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -88,3 +93,7 @@ class ChakCard extends StatelessWidget {
     );
   }
 }
+
+
+
+
