@@ -10,6 +10,9 @@ class ChakCard extends StatefulWidget {
 }
 
 class _ChakCardState extends State<ChakCard> {
+
+  int userLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +23,18 @@ class _ChakCardState extends State<ChakCard> {
         backgroundColor: Colors.grey[850],
         elevation: 0,
       ),
+
+      //build button
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            userLevel += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey,
+      ),
+
       body: Padding(
         padding: EdgeInsets.fromLTRB(10, 30, 0, 0),
         child: Column(
@@ -62,7 +77,7 @@ class _ChakCardState extends State<ChakCard> {
             ),
             SizedBox(height: 10),
             Text(
-              '9',
+              '$userLevel',
               style: TextStyle(
                 color: Colors.orange,
                 letterSpacing: 2,
