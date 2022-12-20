@@ -20,7 +20,37 @@ class _QuoteListState extends State<QuoteList> {
     Quote(text: 'I have nothing to declare except my genius', author: 'Oscar'),
     Quote(text: 'The trust is rarely pure and never simple', author: 'Oscar')
   ];
-  
+
+  //create card widget
+  Widget quoteTemplate(quote){
+    return Card(
+     margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+     child: Padding(
+       padding: const EdgeInsets.all (12),
+       child: Column(
+         crossAxisAlignment: CrossAxisAlignment.stretch,
+         children: <Widget>[
+           Text(
+             quote.text,
+             style: TextStyle(
+               fontSize: 18,
+               color: Colors.grey[600],
+             ),
+           ),
+           SizedBox(height: 16),
+           Text(
+             quote.author,
+             style: TextStyle(
+               fontSize: 14,
+               color: Colors.grey[800],
+             ),
+             ),
+         ],
+       ),
+     ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +62,7 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         //return text from list
-        children: quotes.map((quote) => Text('${quote.text} - ${quote.author}')).toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }
